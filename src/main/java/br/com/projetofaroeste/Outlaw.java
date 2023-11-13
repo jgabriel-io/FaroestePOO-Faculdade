@@ -1,14 +1,12 @@
 package br.com.projetofaroeste;
-import java.util.Random;
 class Outlaw extends Cowboy {
     public Outlaw(String nome, int idade, double saude, double energia, String cavalo, String gangue) {
         super(nome, idade, saude, energia, cavalo, gangue);
     }
     public void roubar() {
         System.out.println();
-        Random random = new Random();
-        double chanceAcao = random.nextDouble();
-        double chanceSucesso = random.nextDouble();
+        double chanceSucesso = Math.random();
+        double chanceAcao = Math.random();
 
         if (chanceAcao <= 0.3) {
             System.out.println(getNome() + " está tentando roubar uma casa!");
@@ -26,17 +24,13 @@ class Outlaw extends Cowboy {
     }
     public void roubarBanco() {
         System.out.println(getNome() + " está planejando roubar um banco!");
-        Random random = new Random();
-        double chance = random.nextDouble();
+        double chanceSucesso = Math.random();
 
-        if (chance <= 0.2) {
+        if (chanceSucesso <= 0.2) {
             System.out.println("Com muita sorte, o assalto foi executado com êxito, resultando em uma significativa quantidade de dinheiro.\n");
         } else {
             System.out.println("O assalto foi malsucedido. Parece que " + getNome() + " não estava preparado para essa empreitada.\n");
         }
-    }
-    public void duelar(Lawman lawman) {
-        super.duelar(lawman);
     }
     public static Outlaw criarOutlaw(String nome, int idade, double saude, double energia, String cavalo, String gangue) {
         return new Outlaw(nome, idade, saude, energia, cavalo, gangue);

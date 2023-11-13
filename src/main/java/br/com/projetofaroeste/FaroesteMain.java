@@ -1,7 +1,6 @@
 package br.com.projetofaroeste;
 
 import java.util.List;
-@SuppressWarnings("ALL")
 public class FaroesteMain {
     public static void associarCowboy(Cowboy cowboy, Cidade cidade, Cavalo cavalo) {
         if (cidade == null) {
@@ -18,7 +17,6 @@ public class FaroesteMain {
         if (gangue == null) {
             return;
         }
-
         if (cavalo == null) {
             return;
         }
@@ -31,7 +29,6 @@ public class FaroesteMain {
         if (cidade == null) {
             return;
         }
-
         if (cavalo == null) {
             return;
         }
@@ -40,26 +37,23 @@ public class FaroesteMain {
         lawman.setCavalo(cavalo.getNome());
         cavalo.setDonoCavalo(lawman);
     }
-
     public static void adicionarItemAoCowboy(Cowboy cowboy, String... itens) {
         for (String item : itens) {
             cowboy.adicionarItemAoInventario(item);
         }
     }
-    public static String removerItemDoCowboy(Cowboy cowboy, String item) {
+    private static void removerItemDoInventario(Cowboy cowboy, String item) {
         cowboy.removerItemDoInventario(item);
         System.out.println("Item Removido do inventário: " + item + "\n");
-        return item;
     }
     public static void adicionarItemAoCavalo(Cavalo cavalo, String... itens) {
         for (String item : itens) {
             cavalo.adicionarItemAoInventario(item);
         }
     }
-    public static String removerItemDoCavalo(Cavalo cavalo, String item) {
+    public static void removerItemDoCavalo(Cavalo cavalo, String item) {
         cavalo.removerItemDoInventario(item);
         System.out.println("Item Removido do alforje: " + item + "\n");
-        return item;
     }
     public static void exibirInfoCowboy(Cowboy cowboy) {
         System.out.println("_".repeat(150) + "\n");
@@ -116,20 +110,25 @@ public class FaroesteMain {
         Cavalo cavalo4 = Cavalo.criarCavalo("Bala no Alvo", "Bretão", "Guerra",0.7, 0.9, "Baixa", "Alta", "Marrom", 0.0);
         CavaloSelvagem cavaloSelvagem1 = CavaloSelvagem.criarCavaloSelvagem("", "Puro-sangue Inglês", "Corida", 100, 80, "Rápida", "Alta", "Preto", 0, "Agressivo", "Floresta");
 
+        Animal animal1 = Animal.criarAnimal("Lobo Cinzento", "Predador", "Alta", "Rápido", "Mediana", "Florestas, Montanhas");
+        Animal animal2= Animal.criarAnimal("Urso Pardo", "Predador", "Alta", "Lento", "Muito alta", "Florestas");
 
         Cowboy cowboy1 = Cowboy.criarCowboy("Billy Midnight", 20, 0.9, 0.7, "", "");
+        Outlaw outlaw1 = Outlaw.criarOutlaw("Arthur Morgan", 25, 0.6, 0.8, "", "");
+        Outlaw outlaw2 = Outlaw.criarOutlaw("Colm O'Driscoll", 25, 0.6, 0.8, "", "");
+        Lawman lawman1 = Lawman.criarLawman("Curtis Malloy", 25, 0.6, 0.8, "","");
+
         associarCowboy(cowboy1, valentine, cavalo1);
         exibirInfoCowboy(cowboy1);
         exibirInfoCavalo(cavalo1);
 
-        Outlaw outlaw1 = Outlaw.criarOutlaw("Arthur Morgan", 25, 0.6, 0.8, "", "");
         associarOutlaw(outlaw1, vanDerLindeGang, cavalo2);
         adicionarItemAoCowboy(outlaw1, "Revólver", "Cigarro", "Dinamite.");
         adicionarItemAoCavalo(cavalo2, "Rifle", "Saco de dormir.");
         exibirInfoCowboy(outlaw1);
         vanDerLindeGang.adicionarMembro(outlaw1);
         outlaw1.roubar();
-        removerItemDoCowboy(outlaw1, "Dinamite");
+        removerItemDoInventario(outlaw1, "Dinamite");
         outlaw1.roubarBanco();
         outlaw1.atirar();
         outlaw1.duelar(cowboy1);
@@ -143,20 +142,18 @@ public class FaroesteMain {
         exibirInfoCavalo(cavaloSelvagem1);
         cavaloSelvagem1.serDomado(outlaw1);
 
-        Outlaw outlaw2 = Outlaw.criarOutlaw("Colm O'Driscoll", 25, 0.6, 0.8, "", "");
-        associarOutlaw(outlaw2, oDriscollsGang, null);
         adicionarItemAoCowboy(outlaw2, "Revólver", "Cigarro", "Mapa.");
         exibirInfoCowboy(outlaw2);
+        cowboy1.duelar(outlaw2);
 
-        Lawman lawman1 = Lawman.criarLawman("Curtis Malloy", 25, 0.6, 0.8, "","");
         associarLawman(lawman1, blackwater, cavalo3);
         adicionarItemAoCowboy(lawman1, "Revólver", "Carabina", "Algemas", "Distintivo", "Chapéu.");
         exibirInfoCowboy(lawman1);
 
         lawman1.prenderOutlaw(outlaw2);
-        String itemRemovidoLawman = removerItemDoCowboy(lawman1, "Algemas");
-        System.out.println("Item Removido do xerife: " + itemRemovidoLawman + "\n");
+        removerItemDoInventario(lawman1, "Algemas");
         lawman1.atirar();
+        lawman1.duelar(outlaw1);
         exibirInfoCavalo(cavalo3);
 
         oDriscollsGang.imprimirInformacoes();
@@ -165,6 +162,8 @@ public class FaroesteMain {
         oDriscollsGang.removerMembro(outlaw2);
         oDriscollsGang.adicionarMembro(outlaw2);
         oDriscollsGang.imprimirMembros();
+        associarOutlaw(outlaw2, oDriscollsGang, cavalo4);
+        exibirInfoCowboy(outlaw2);
         oDriscollsGang.roubarBanco();
 
         vanDerLindeGang.brigarEntreGangues(oDriscollsGang);

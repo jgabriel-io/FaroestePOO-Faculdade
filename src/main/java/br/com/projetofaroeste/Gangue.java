@@ -1,7 +1,7 @@
 package br.com.projetofaroeste;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 public class Gangue {
     private final String nomeGangue;
     private final String lider;
@@ -52,9 +52,8 @@ public class Gangue {
     }
     public void brigarEntreGangues(Gangue gangue2) {
         System.out.println("Ao entardecer, a luz dourada do sol lança sombras na rua empoeirada, onde as gangues " + this.nomeGangue + " e " + gangue2.getNomeGangue() + " se encontram para um confronto.");
-        Random random = new Random();
-        double chanceAtaque = random.nextDouble();
-        double chanceVitoria = random.nextDouble();
+        double chanceAtaque = Math.random();
+        double chanceVitoria = Math.random();
 
         if (chanceAtaque <= 0.5) {
             System.out.println("Um membro da gangue " + this.nomeGangue + " ataca primeiro contra " + gangue2.getNomeGangue() + "!");
@@ -69,10 +68,9 @@ public class Gangue {
     }
     public void roubarBanco() {
         System.out.println("\nMembros da gangue " + getNomeGangue() + " estão tentando roubar um banco!");
-        Random random = new Random();
-        double chance = random.nextDouble();
+        double chanceSucesso = Math.random();
 
-        if (chance <= 0.5) {
+        if (chanceSucesso <= 0.5) {
             System.out.println("O assalto foi executado com êxito, resultando em uma considerável soma de dinheiro.\n");
         } else {
             System.out.println("O assalto foi malsucedido, conseguindo apenas roubar alguns pertences das pessoas presentes no momento.\n");

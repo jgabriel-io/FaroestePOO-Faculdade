@@ -1,7 +1,7 @@
 package br.com.projetofaroeste;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 class Cidade {
     private final String nomeCidade;
@@ -54,9 +54,8 @@ class Cidade {
     }
     public void brigarComGangue(Gangue gangue) {
         System.out.println("Ao anoitecer, a luz dourada do sol lança sombras na rua empoeirada, onde a cidade de " + this.nomeCidade + " e a gangue " + gangue.getNomeGangue() + " se encontram para um confronto.");
-        Random random = new Random();
-        double chanceAtaque = random.nextDouble();
-        double chanceVitoria = random.nextDouble();
+        double chanceAtaque = Math.random();
+        double chanceVitoria = Math.random();
 
         if (chanceAtaque <= 0.5) {
             System.out.println("Um membro da cidade de " + this.nomeCidade + " ataca primeiro contra a gangue " + gangue.getNomeGangue() + "!");

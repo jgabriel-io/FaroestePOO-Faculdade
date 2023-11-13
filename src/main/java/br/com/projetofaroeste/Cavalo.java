@@ -1,6 +1,6 @@
 package br.com.projetofaroeste;
+
 import java.util.List;
-@SuppressWarnings("ALL")
 public class Cavalo {
     private String nome;
     private String raca;
@@ -29,57 +29,35 @@ public class Cavalo {
     public String getNome() {
         return nome;
     }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+
     public String getRaca() {
         return raca;
     }
-    public void setRaca(String raca) {
-        this.raca = raca;
-    }
-    public String getCategoria() {
-        return categoria;
-    }
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
+
     public double getSaude() {
         return saude;
     }
-    public void setSaude(double saude) {
-        this.saude = saude;
-    }
+
     public double getEnergia() {
         return energia;
     }
-    public void setEnergia(double energia) {
-        this.energia = energia;
-    }
+
     public String getVelocidade() {
         return velocidade;
     }
-    public void setVelocidade(String velocidade) {
-        this.velocidade = velocidade;
-    }
+
     public String getResistencia() {
         return resistencia;
     }
-    public void setResistencia(String resistencia) {
-        this.resistencia = resistencia;
-    }
+
     public String getPelagem() {
         return pelagem;
     }
-    public void setPelagem(String pelagem) {
-        this.pelagem = pelagem;
-    }
+
     public double getVinculo() {
         return vinculo;
     }
-    public void setVinculo(double vinculo) {
-        this.vinculo = vinculo;
-    }
+
     public Cowboy getDonoCavalo() {
         return cowboy;
     }
@@ -126,4 +104,5 @@ public class Cavalo {
     public static Cavalo criarCavalo(String nome, String raca, String categoria, double saude, double energia, String velocidade, String resistencia, String pelagem, double vinculo) {
         return new Cavalo(nome, raca, categoria, saude, energia, velocidade, resistencia, pelagem, vinculo);
     }
+
 }

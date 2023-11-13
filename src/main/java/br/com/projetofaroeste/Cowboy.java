@@ -1,6 +1,6 @@
 package br.com.projetofaroeste;
+
 import java.util.List;
-import java.util.Random;
 public class Cowboy {
     private final String nome;
     private final int idade;
@@ -52,10 +52,9 @@ public class Cowboy {
         this.inventario.removerItem(item);
     }
     public void atirar() {
-        Random random = new Random();
-        double chance = random.nextDouble();
+        double chanceAcerto = Math.random();
 
-        if (chance <= 0.5) {
+        if (chanceAcerto <= 0.5) {
             System.out.println(getNome() + " disparou contra o inimigo e acertou o tiro!\n");
         } else {
             System.out.println(getNome() + " disparou contra o inimigo e errou o tiro!\n");
@@ -63,9 +62,8 @@ public class Cowboy {
     }
     public void duelar(Cowboy cowboy) {
         System.out.println("Ao entardecer, a luz dourada do sol lança sombras na rua empoeirada, onde " + this.getNome() + " e " + cowboy.getNome() + " se encontram para um confronto.");
-        Random random = new Random();
-        double chanceAtaque = random.nextDouble();
-        double chanceVitoria = random.nextDouble();
+        double chanceAtaque = Math.random();
+        double chanceVitoria = Math.random();
 
         if (chanceAtaque <= 0.5) {
             System.out.println(this.getNome() + " ataca primeiro contra " + cowboy.getNome() + "!");
