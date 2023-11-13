@@ -63,9 +63,9 @@ class Cidade {
             System.out.println("Um membro da gangue " + gangue.getNomeGangue() + " ataca primeiro contra a cidade de " + this.nomeCidade + "!");
         }
         if (chanceVitoria <= 0.5) {
-            System.out.println(this.nomeCidade + " vence o confronto, causando baixas e forçando os sobreviventes de " + gangue.getNomeGangue() + " a fugirem.\n");
+            System.out.println("Com feroz determinação, " + this.nomeCidade + " prevalece no confronto, causando baixas significativas e forçando os sobreviventes da gangue " + gangue.getNomeGangue() + " a baterem em retirada. - Alguns membros da gangue foram abatidos.\n");
         } else {
-            System.out.println(gangue.getNomeGangue() + " vence o confronto, causando baixas e forçando os sobreviventes de " + this.nomeCidade + " a fugirem.\n");
+            System.out.println("A gangue " + gangue.getNomeGangue() + " triunfa no confronto, infligindo pesadas perdas e forçando os sobreviventes de " + this.nomeCidade + " a recuarem, em meio ao caos. - Alguns moradores e autoridades da cidade foram abatidos.\n");
         }
     }
 }

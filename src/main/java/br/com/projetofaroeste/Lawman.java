@@ -17,9 +17,9 @@ class Lawman extends Cowboy {
         double chancePrender = Math.random();
 
         if (chancePrender <= 0.5) {
-            System.out.println(outlaw.getNome() + " foi preso!\n");
+            System.out.println(outlaw.getNome() + " foi preso! - O fora da lei irá passar por um julgamento.\n");
         } else {
-            System.out.println(outlaw.getNome() + " escapou da prisão!\n");
+            System.out.println(outlaw.getNome() + " escapou da lei! - O fora da lei permanecerá livre.\n");
         }
     }
     public static Lawman criarLawman(String nome, int idade, double saude, double energia, String cavalo, String cidade) {

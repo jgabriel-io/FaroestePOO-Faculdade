@@ -55,26 +55,26 @@ public class Cowboy {
         double chanceAcerto = Math.random();
 
         if (chanceAcerto <= 0.5) {
-            System.out.println(getNome() + " disparou contra o inimigo e acertou o tiro!\n");
+            System.out.println(getNome() + " disparou contra o inimigo e acertou o tiro! - o inimigo está ferido\n");
         } else {
-            System.out.println(getNome() + " disparou contra o inimigo e errou o tiro!\n");
+            System.out.println(getNome() + " disparou contra o inimigo e errou o tiro! - o inimigo não foi atingido\n");
         }
     }
     public void duelar(Cowboy cowboy) {
-        System.out.println("Ao entardecer, a luz dourada do sol lança sombras na rua empoeirada, onde " + this.getNome() + " e " + cowboy.getNome() + " se encontram para um confronto.");
+        System.out.println("À medida que o sol se põe, lançando uma luz dourada sobre a rua empoeirada, " + this.getNome() + " e " + cowboy.getNome() + " se enfrentam em um duelo épico.");
         double chanceAtaque = Math.random();
         double chanceVitoria = Math.random();
 
         if (chanceAtaque <= 0.5) {
-            System.out.println(this.getNome() + " ataca primeiro contra " + cowboy.getNome() + "!");
+            System.out.println("Num movimento rápido, " + this.getNome() + " ataca primeiro contra " + cowboy.getNome() + "!");
         } else {
-            System.out.println(cowboy.getNome() + " ataca primeiro contra " + this.getNome() + "!");
+            System.out.println("Cowboy" + cowboy.getNome() + " demonstra agilidade e ataca primeiro contra " + this.getNome() + "!");
         }
 
         if (chanceVitoria <= 0.5) {
-            System.out.println(this.getNome() + " vence o duelo, causando baixas em " + cowboy.getNome() + ".\n");
+            System.out.println("Em uma reviravolta surpreendente, " + this.getNome() + " emerge vitorioso sobre " + cowboy.getNome() + " no duelo. - o oponente foi morto\n");
         } else {
-            System.out.println(cowboy.getNome() + " vence o duelo, causando baixas em " + this.getNome() + ".\n");
+            System.out.println("Com habilidade notável, " + cowboy.getNome() + " vence o duelo, derrotando " + this.getNome() + ". - o oponente foi morto\n");
         }
     }
     public static Cowboy criarCowboy(String nome, int idade, double saude, double energia, String cavalo, String gangue) {

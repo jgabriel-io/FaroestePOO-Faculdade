@@ -22,10 +22,10 @@ public class CavaloSelvagem extends Cavalo {
         double chanceDomar = Math.random();
 
         if (chanceDomar <= 0.5) {
-            System.out.println(cowboy.getNome() + " domou com sucesso o " + getRaca() + " selvagem!\n");
+            System.out.println(cowboy.getNome() + " domou com sucesso o " + getRaca() + " selvagem! - O cavalo foi domado pelo cowboy\n");
             setAgressividade("Calmo"); // Define agressividade como calmo após ser domado com sucesso
         } else {
-            System.out.println("A tentativa de domar falhou!\n");
+            System.out.println("A tentativa de domar falhou! - O cavalo permanecerá livre\n");
         }
     }
     @Override

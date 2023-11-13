@@ -145,8 +145,12 @@ public class FaroesteMain {
 
         exibirInfoAnimal(animal1);
         animal1.atacar(outlaw1);
+        animal1.serCacado(lawman1);
+        animal1.serEsfolado(lawman1);
         exibirInfoAnimal(animal2);
         animal2.atacar(outlaw1);
+        animal2.serCacado(outlaw1);
+        animal2.serEsfolado(outlaw1);
 
         exibirInfoCavalo(cavalo2);
         removerItemDoCavalo(cavalo2, "Rifle");

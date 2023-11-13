@@ -61,19 +61,21 @@ public class Gangue {
             System.out.println("Um membro da gangue " + gangue2.getNomeGangue() + " ataca primeiro contra " + this.nomeGangue + "!");
         }
         if (chanceVitoria <= 0.5) {
-            System.out.println("Membros de " + this.nomeGangue + " vencem o tiroteio, causando baixas e forçando os sobreviventes de " + gangue2.getNomeGangue() + " a fugirem.\n");
+            System.out.println("Com ferocidade, os membros de " + this.nomeGangue + " triunfam no tiroteio, causando baixas e forçando os sobreviventes de " + gangue2.getNomeGangue() + " a baterem em retirada. - Alguns membros da gangue rival perderam a vida neste conflito, intensificando ainda mais a rivalidade.\n");
         } else {
-            System.out.println("A gangue " + gangue2.getNomeGangue() + " vence o tiroteio, causando baixas e forçando os sobreviventes de " + this.nomeGangue + " a fugirem.\n");
+            System.out.println("A gangue " + gangue2.getNomeGangue() + " emerge vitoriosa no tiroteio, causando baixas e obrigando os sobreviventes de " + this.nomeGangue + " a recuarem. - Alguns membros da gangue rival perderam a vida neste conflito, intensificando ainda mais a rivalidade.\n");
         }
     }
     public void roubarBanco() {
-        System.out.println("Membros da gangue " + getNomeGangue() + " estão tentando roubar um banco!");
+        System.out.println("Às sombras da noite, membros da gangue " + getNomeGangue() + " tramam o audacioso roubo de um banco!");
+
         double chanceSucesso = Math.random();
 
         if (chanceSucesso <= 0.5) {
-            System.out.println("O assalto foi executado com êxito, resultando em uma considerável soma de dinheiro.\n");
+            System.out.println("Com precisão e astúcia, o assalto é executado com êxito, resultando em uma considerável fortuna. - A gangue parte com os bolsos cheios, desaparecendo nas sombras.\n");
         } else {
-            System.out.println("O assalto foi malsucedido, conseguindo apenas roubar alguns pertences das pessoas presentes no momento.\n");
+            System.out.println("Apesar dos esforços, o assalto não atinge o sucesso planejado, conseguindo apenas subtrair alguns pertences das pessoas presentes no momento. - A gangue deixa a cena com poucos espólios, mas permanece na sombra, pronta para o próximo movimento.\n");
         }
     }
+
 }

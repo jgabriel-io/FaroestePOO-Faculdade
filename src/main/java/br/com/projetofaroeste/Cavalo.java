@@ -2,15 +2,15 @@ package br.com.projetofaroeste;
 
 import java.util.List;
 public class Cavalo {
-    private String nome;
-    private String raca;
-    private String categoria;
-    private double saude;
-    private double energia;
-    private String velocidade;
-    private String resistencia;
-    private String pelagem;
-    private double vinculo;
+    private final String nome;
+    private final String raca;
+    private final String categoria;
+    private final double saude;
+    private final double energia;
+    private final String velocidade;
+    private final String resistencia;
+    private final String pelagem;
+    private final double vinculo;
     private final Inventario inventarioCavalo;
     public Cowboy cowboy;
     
@@ -35,12 +35,7 @@ public class Cavalo {
         return raca;
     }
 
-    public String getCategoria() {
-        return categoria;
-    }
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
+
 
     public double getSaude() {
         return saude;
@@ -96,17 +91,17 @@ public class Cavalo {
 
     public void correr() {
         if (cowboy != null) {
-            System.out.println(cowboy.getNome() + " está correndo com o cavalo " + nome + ".");
+            System.out.println(cowboy.getNome() + " está cavalgando no cavalo " + nome + ".");
         } else {
-            System.out.println("O cavalo " + nome + " está correndo.");
+            System.out.println("O cavalo " + nome + " está correndo livremente.");
         }
     }
     
     public void serCuidado() {
         if (cowboy != null) {
-            System.out.println(cowboy.getNome() + " está cuidando do cavalo " + nome + ", acariciando-o.");
+            System.out.println(cowboy.getNome() + " está cuidando do cavalo " + nome + ".");
         } else {
-            System.out.println("O cavalo " + nome + " está sendo cuidado, acariciado por alguém.");
+            System.out.println("O cavalo " + nome + " está sendo cuidado por alguém.");
         }
     }
 
@@ -122,4 +117,7 @@ public class Cavalo {
         return new Cavalo(nome, raca, categoria, saude, energia, velocidade, resistencia, pelagem, vinculo);
     }
 
+    public String getCategoria() {
+        return categoria;
+    }
 }

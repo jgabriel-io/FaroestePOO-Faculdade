@@ -17,9 +17,9 @@ class Outlaw extends Cowboy {
         }
 
         if (chanceSucesso <= 0.5) {
-            System.out.println("O assalto foi realizado com sucesso, resultando em uma considerável soma de dinheiro.\n");
+            System.out.println("O assalto foi realizado com sucesso, resultando em uma considerável soma de dinheiro. - O fora da lei sai com um saco cheio de dinheiro e itens valiosos.\n");
         } else {
-            System.out.println("O assalto foi malsucedido, conseguindo apenas roubar alguns pertences das pessoas presentes no momento.\n");
+            System.out.println("O assalto foi malsucedido, conseguindo apenas roubar alguns pertences das pessoas presentes no momento. - O fora da lei sai com alguns trocados e itens valiosos.\n");
         }
     }
     public void roubarBanco() {
@@ -27,9 +27,9 @@ class Outlaw extends Cowboy {
         double chanceSucesso = Math.random();
 
         if (chanceSucesso <= 0.2) {
-            System.out.println("Com muita sorte, o assalto foi executado com êxito, resultando em uma significativa quantidade de dinheiro.\n");
+            System.out.println("Com muita sorte, o assalto foi executado com êxito, resultando em uma significativa quantidade de dinheiro. - O fora da lei sai com um saco cheio de dinheiro e itens valiosos.\n");
         } else {
-            System.out.println("O assalto foi malsucedido. Parece que " + getNome() + " não estava preparado para essa empreitada.\n");
+            System.out.println("O assalto foi malsucedido. Parece que " + getNome() + " deveria ter trago alguem para vigiar a entrada. - O fora da lei sai de mãos vazias.\n");
         }
     }
     public static Outlaw criarOutlaw(String nome, int idade, double saude, double energia, String cavalo, String gangue) {
