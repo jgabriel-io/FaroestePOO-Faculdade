@@ -57,7 +57,7 @@ public class FaroesteMain {
     }
     public static void exibirInfoCowboy(Cowboy cowboy) {
         System.out.println("_".repeat(150) + "\n");
-        System.out.println("INFORMAÇÕES SOBRE O COWBOY");
+        System.out.println("INFORMAÇÕES SOBRE O COWBOY " + cowboy.getNome().toUpperCase());
         System.out.println("Nome: " + cowboy.getNome() + ".");
         System.out.println("Idade: " + cowboy.getIdade());
         System.out.println("Saúde: " + cowboy.getSaude());
@@ -78,7 +78,7 @@ public class FaroesteMain {
     }
     public static void exibirInfoCavalo(Cavalo cavalo) {
         System.out.println("_".repeat(150) + "\n");
-        System.out.println("INFORMAÇÕES SOBRE O CAVALO");
+        System.out.println("INFORMAÇÕES SOBRE O CAVALO " + cavalo.getNome().toUpperCase());
         System.out.println("Nome: " + cavalo.getNome() + ".");
         System.out.println("Raça: " + cavalo.getRaca() + ".");
         System.out.println("Pelagem: " + cavalo.getPelagem());
@@ -97,6 +97,16 @@ public class FaroesteMain {
         List<String> itensDoInventario = cavalo.listarItensDoCavalo();
         System.out.println("Itens no alforje: " + (itensDoInventario.isEmpty() ? "Vazio." : String.join(", ", itensDoInventario)));
         System.out.println();
+    }
+    public static void exibirInfoAnimal(Animal animal) {
+        System.out.println("_".repeat(150) + "\n");
+        System.out.println("INFORMAÇÕES SOBRE O " + animal.getEspecie().toUpperCase());
+        System.out.println("Especie: " + animal.getEspecie());
+        System.out.println("Categoria: " + animal.getCategoria());
+        System.out.println("Agressividade: " + animal.getAgressividade());
+        System.out.println("Velocidade: " + animal.getVelocidade() + ".");
+        System.out.println("Resistência: " + animal.getResistencia());
+        System.out.println("Localização: " + animal.getLocalizacao());
     }
     public static void main(String[] args) {
         Gangue vanDerLindeGang = new Gangue("Van der Linde", "Dutch Van der Linde", true);
@@ -132,6 +142,11 @@ public class FaroesteMain {
         outlaw1.roubarBanco();
         outlaw1.atirar();
         outlaw1.duelar(cowboy1);
+
+        exibirInfoAnimal(animal1);
+        animal1.atacar(outlaw1);
+        exibirInfoAnimal(animal2);
+        animal2.atacar(outlaw1);
 
         exibirInfoCavalo(cavalo2);
         removerItemDoCavalo(cavalo2, "Rifle");

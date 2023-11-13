@@ -13,6 +13,7 @@ public class Cavalo {
     private double vinculo;
     private final Inventario inventarioCavalo;
     public Cowboy cowboy;
+    
     public Cavalo(String nome, String raca, String categoria, double saude, double energia, String velocidade, String resistencia, String pelagem, double vinculo) {
         this.nome = nome;
         this.raca = raca;
@@ -32,6 +33,13 @@ public class Cavalo {
 
     public String getRaca() {
         return raca;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
     }
 
     public double getSaude() {
@@ -61,18 +69,23 @@ public class Cavalo {
     public Cowboy getDonoCavalo() {
         return cowboy;
     }
+
     public void setDonoCavalo(Cowboy donoCavalo) {
         this.cowboy = donoCavalo;
     }
+
     public void adicionarItemAoInventario(String item) {
         this.inventarioCavalo.adicionarItem(item);
     }
+
     public void removerItemDoInventario(String item) {
         this.inventarioCavalo.removerItem(item);
     }
+
     public List<String> listarItensDoCavalo() {
         return this.inventarioCavalo.listarItens();
     }
+
     public void trotar() {
         if (cowboy != null) {
             System.out.println(cowboy.getNome() + " está trotando com o cavalo " + nome + ".");
@@ -80,6 +93,7 @@ public class Cavalo {
             System.out.println("O cavalo " + nome + " está trotando.");
         }
     }
+
     public void correr() {
         if (cowboy != null) {
             System.out.println(cowboy.getNome() + " está correndo com o cavalo " + nome + ".");
@@ -87,6 +101,7 @@ public class Cavalo {
             System.out.println("O cavalo " + nome + " está correndo.");
         }
     }
+    
     public void serCuidado() {
         if (cowboy != null) {
             System.out.println(cowboy.getNome() + " está cuidando do cavalo " + nome + ", acariciando-o.");
@@ -94,6 +109,7 @@ public class Cavalo {
             System.out.println("O cavalo " + nome + " está sendo cuidado, acariciado por alguém.");
         }
     }
+
     public void serMontado() {
         if (cowboy != null) {
             System.out.println(cowboy.getNome() + " montou no cavalo " + nome + ".");
@@ -101,6 +117,7 @@ public class Cavalo {
             System.out.println("Alguém montou no cavalo " + nome + ".");
         }
     }
+
     public static Cavalo criarCavalo(String nome, String raca, String categoria, double saude, double energia, String velocidade, String resistencia, String pelagem, double vinculo) {
         return new Cavalo(nome, raca, categoria, saude, energia, velocidade, resistencia, pelagem, vinculo);
     }
