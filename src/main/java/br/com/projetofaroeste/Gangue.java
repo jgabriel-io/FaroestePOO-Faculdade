@@ -67,7 +67,7 @@ public class Gangue {
         }
     }
     public void roubarBanco() {
-        System.out.println("\nMembros da gangue " + getNomeGangue() + " estão tentando roubar um banco!");
+        System.out.println("Membros da gangue " + getNomeGangue() + " estão tentando roubar um banco!");
         double chanceSucesso = Math.random();
 
         if (chanceSucesso <= 0.5) {
